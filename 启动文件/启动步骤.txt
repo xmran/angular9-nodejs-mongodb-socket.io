@@ -1,0 +1,6 @@
+1,cd backend
+2,nodemon server
+3,mongod --dbpath  mongolÂ·¾¶
+3,mongo
+
+ng serve

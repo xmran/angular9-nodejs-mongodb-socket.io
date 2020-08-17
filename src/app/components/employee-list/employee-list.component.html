@@ -1,0 +1,66 @@
+<div class="container">
+  <!-- No data message -->
+  <p *ngIf="Employee.length <= 0" class="no-data text-center">There is no employee added yet!</p>
+
+
+  <nz-table #basicTable [nzData]="Employee" [nzBordered]="true">
+    <thead>
+    <tr>
+      <th>Employee ID</th>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Designation</th>
+      <th>Phone No</th>
+      <th>Update</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let data of basicTable.data; let i = index">
+      <td>{{data._id}}</td>
+      <td>{{data.name}}</td>
+      <td>{{data.email}}</td>
+      <td>{{data.designation}}</td>
+      <td>{{data.phoneNumber}}</td>
+      <td>
+        <button nz-button nzType="primary" [routerLink]="['/edit-employee/', data._id]">编辑</button>
+        <button nz-button nzType="primary" nz-popconfirm style="margin-left: 15px"
+                nzPopconfirmTitle="确定删除吗?"
+                nzPopconfirmPlacement="bottom"
+                (nzOnConfirm)="removeEmployee(data, i)">删除</button>
+      </td>
+    </tr>
+    </tbody>
+  </nz-table>
+
+
+  <!-- Employee list -->
+  <!--  <table class="table table-bordered" *ngIf="Employee.length > 0">-->
+  <!--    <thead class="table-success">-->
+  <!--    <tr>-->
+  <!--      <th scope="col">Employee ID</th>-->
+  <!--      <th scope="col">Name</th>-->
+  <!--      <th scope="col">Email</th>-->
+  <!--      <th scope="col">Designation</th>-->
+  <!--      <th scope="col">Phone No</th>-->
+  <!--      <th scope="col center">Update</th>-->
+  <!--    </tr>-->
+  <!--    </thead>-->
+  <!--    <tbody>-->
+  <!--    <tr *ngFor="let employee of Employee; let i = index">-->
+  <!--      <th scope="row">{{employee._id}}</th>-->
+  <!--      <td>{{employee.name}}</td>-->
+  <!--      <td>{{employee.email}}</td>-->
+  <!--      <td>{{employee.designation}}</td>-->
+  <!--      <td>{{employee.phoneNumber}}</td>-->
+  <!--      <td class="text-center edit-block">-->
+  <!--          <span class="edit" [routerLink]="['/edit-employee/', employee._id]">-->
+  <!--            <button type="button" class="btn btn-success btn-sm">Edit</button>-->
+  <!--          </span>-->
+  <!--        <span class="delete" (click)="removeEmployee(employee, i)">-->
+  <!--            <button type="button" class="btn btn-danger btn-sm">Delete</button>-->
+  <!--          </span>-->
+  <!--      </td>-->
+  <!--    </tr>-->
+  <!--    </tbody>-->
+  <!--  </table>-->
+</div>

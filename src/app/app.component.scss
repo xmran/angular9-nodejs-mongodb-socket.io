@@ -1,0 +1,15 @@
+:host ::ng-deep {
+  text-align: center;
+  height: 100%;
+  overflow: hidden;
+  .ant-layout{
+    height: 100%;
+  }
+  .ant-layout-sider{
+    background:#ffffff;
+  }
+  .ant-layout-content{
+    margin: 20px;
+  }
+}
+
