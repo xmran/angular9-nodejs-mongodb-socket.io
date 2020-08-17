@@ -14,7 +14,8 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
   ### 4、系统cmd执行 mongo
 
   ng serve 运行`localhost:4200`
-
+## 参考地址
+  https://www.positronx.io/mean-stack-tutorial-angular-7-crud-bootstrap/
 ## Build
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
