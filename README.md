@@ -6,6 +6,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
   ### 2、npm
   ### 3、nodemon
      npm install -g nodemon
+  ### 4、mongodb https://mongodb.net.cn/
 
 ## 启动
   ### 1、cd backend
