@@ -1,14 +1,19 @@
 # AngularNodejsApp
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.0.
+## 依赖环境
+  ### 1、nodejs https://nodejs.org/zh-cn/
+  ### 2、npm
+  ### 3、nodemon
+     npm install -g nodemon
 
-## Development server
+## 启动
+  ### 1、cd backend
+  ### 2、nodemon server
+  ### 3、系统cmd执行 mongod --dbpath  mongo路径
+  ### 4、系统cmd执行 mongo
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+  ng serve 运行`localhost:4200`
 
 ## Build
 
