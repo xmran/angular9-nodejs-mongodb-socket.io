@@ -7,6 +7,9 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
   ### 3、nodemon
      npm install -g nodemon
   ### 4、mongodb https://mongodb.net.cn/
+  ### 5、sockiet.io socket.io-client
+  
+    
 
 ## 启动
   ### 1、cd backend
@@ -16,5 +19,6 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
   ng serve 运行`localhost:4200`
 ## 参考地址
-  https://www.positronx.io/mean-stack-tutorial-angular-7-crud-bootstrap/
+  https://www.positronx.io/mean-stack-tutorial-angular-7-crud-bootstrap/  
+  http://www.deathghost.cn/article/angular/35 websocket-angular连通参考
 
