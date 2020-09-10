@@ -1,5 +1,6 @@
 import { Router } from '@angular/router';
 import { ApiService } from './../../service/api.service';
+import { ChatService } from './../../service/chat.service';
 import { Component, OnInit, NgZone } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from "@angular/forms";
 
@@ -12,18 +13,22 @@ import { FormGroup, FormBuilder, Validators } from "@angular/forms";
 export class EmployeeCreateComponent implements OnInit {
   submitted = false;
   employeeForm: FormGroup;
-  EmployeeProfile:any = ['Finance', 'BDM', 'HR', 'Sales', 'Admin']
-
+  EmployeeProfile: any = ['Finance', 'BDM', 'HR', 'Sales', 'Admin']
   constructor(
     public fb: FormBuilder,
     private router: Router,
     private ngZone: NgZone,
-    private apiService: ApiService
+    private apiService: ApiService,
+    private chatService: ChatService
   ) {
     this.mainForm();
   }
 
-  ngOnInit() { }
+  ngOnInit() {
+    this.chatService.onNewMessage().subscribe(msg => {
+      console.log(msg);
+    });
+  }
 
   mainForm() {
     this.employeeForm = this.fb.group({
@@ -35,14 +40,14 @@ export class EmployeeCreateComponent implements OnInit {
   }
 
   // Choose designation with select dropdown
-  updateProfile(e){
+  updateProfile(e) {
     this.employeeForm.get('designation').setValue(e, {
       onlySelf: true
     })
   }
 
   // Getter to access form control
-  get myForm(){
+  get myForm() {
     return this.employeeForm.controls;
   }
 
@@ -53,8 +58,9 @@ export class EmployeeCreateComponent implements OnInit {
     } else {
       this.apiService.createEmployee(this.employeeForm.value).subscribe(
         (res) => {
-          console.log('Employee successfully created!')
-          this.ngZone.run(() => this.router.navigateByUrl('/employees-list'))
+          this.ngZone.run(() => this.router.navigateByUrl('/employees-list'));
+          this.chatService.sendMessage(this.employeeForm.value);
+
         }, (error) => {
           console.log(error);
         });

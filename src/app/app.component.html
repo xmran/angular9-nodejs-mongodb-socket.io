@@ -1,19 +1,17 @@
 <nz-layout>
-  <nz-layout>
-    <nz-sider>
-      <ul nz-menu nzMode="inline">
-        <li nz-submenu nzTitle="用户管理" nzIcon="setting">
-          <ul>
-            <li nz-menu-item><a routerLinkActive="active" routerLink="/create-employee">新增</a></li>
-            <li nz-menu-item><a routerLinkActive="active" routerLink="/employees-list">查看</a></li>
-          </ul>
-        </li>
-      </ul>
-    </nz-sider>
-    <nz-content>
-      <router-outlet></router-outlet>
-    </nz-content>
-  </nz-layout>
+    <nz-layout>
+        <nz-sider>
+            <ul nz-menu nzMode="inline">
+                <li nz-submenu nzTitle="用户管理" [nzOpen]="true">
+                    <ul>
+                        <li nz-menu-item><a routerLinkActive="active" routerLink="/create-employee">新增</a></li>
+                        <li nz-menu-item><a routerLinkActive="active" routerLink="/employees-list">查看</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nz-sider>
+        <nz-content>
+            <router-outlet></router-outlet>
+        </nz-content>
+    </nz-layout>
 </nz-layout>
-
-
